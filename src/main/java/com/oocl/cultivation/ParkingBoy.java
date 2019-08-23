@@ -22,6 +22,7 @@ public class ParkingBoy {
     }
 
     public String getLastErrorMessage() {
+    	lastErrorMessage = "Unrecognized parking ticket.";
         return lastErrorMessage;
     }
 }

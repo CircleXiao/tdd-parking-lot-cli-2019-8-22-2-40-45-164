@@ -51,17 +51,17 @@ class ParkingBoyFacts {
         assertSame(car, parkingBoy.fetch(ticket));
     }
 
-//    @Test
-//    void should_query_message_once_the_ticket_is_wrong() {
-//        ParkingLot parkingLot = new ParkingLot();
-//        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
-//        ParkingTicket wrongTicket = new ParkingTicket();
-//
-//        parkingBoy.fetch(wrongTicket);
-//        String message = parkingBoy.getLastErrorMessage();
-//
-//        assertEquals("Unrecognized parking ticket.", message);
-//    }
+    @Test
+    void should_query_message_once_the_ticket_is_wrong() {
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        ParkingTicket wrongTicket = new ParkingTicket();
+
+        parkingBoy.fetch(wrongTicket);
+        String message = parkingBoy.getLastErrorMessage();
+
+        assertEquals("Unrecognized parking ticket.", message);
+    }
 //
 //    @Test
 //    void should_clear_the_message_once_the_operation_is_succeeded() {
