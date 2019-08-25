@@ -28,6 +28,7 @@ public class ParkingLot {
 	public Car fetch(ParkingTicket parkingTicket) {
 		Car car = new Car();
 		car = cars.get(parkingTicket);
+		cars.remove(parkingTicket, car);
 		return car;
 	}
 }
