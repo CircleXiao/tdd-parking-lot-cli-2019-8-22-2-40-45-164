@@ -60,22 +60,25 @@ class ParkingBoyFacts {
         parkingBoy.fetch(wrongTicket);
         String message = parkingBoy.getLastErrorMessage();
 
+        System.out.println(parkingBoy.getLastErrorMessage());
         assertEquals("Unrecognized parking ticket.", message);
     }
-//
-//    @Test
-//    void should_clear_the_message_once_the_operation_is_succeeded() {
-//        ParkingLot parkingLot = new ParkingLot();
-//        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
-//        ParkingTicket wrongTicket = new ParkingTicket();
-//
-//        parkingBoy.fetch(wrongTicket);
-//        assertNotNull(parkingBoy.getLastErrorMessage());
-//
-//        ParkingTicket ticket = parkingBoy.park(new Car());
-//        assertNotNull(ticket);
-//        assertNull(parkingBoy.getLastErrorMessage());
-//    }
+
+    @Test
+    void should_clear_the_message_once_the_operation_is_succeeded() {
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        ParkingTicket wrongTicket = new ParkingTicket();
+
+        parkingBoy.fetch(wrongTicket);
+        assertNotNull(parkingBoy.getLastErrorMessage());
+
+        ParkingTicket ticket = parkingBoy.park(new Car());
+        assertNotNull(ticket);
+        assertNull(parkingBoy.getLastErrorMessage());
+        
+
+    }
 //
 //    @Test
 //    void should_not_fetch_any_car_once_ticket_is_not_provided() {
