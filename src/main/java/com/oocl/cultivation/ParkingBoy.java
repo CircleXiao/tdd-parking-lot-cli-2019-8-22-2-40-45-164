@@ -4,12 +4,12 @@ public class ParkingBoy {
 
     private final ParkingLot parkingLot;
     private String lastErrorMessage;
-
+    
     public ParkingBoy(ParkingLot parkingLot) {
         this.parkingLot = parkingLot;
     }
 
-    public ParkingTicket park(Car car) {
+	public ParkingTicket park(Car car) {
     	if (this.parkingLot.getAvailableParkingPosition() < 1) {
 			lastErrorMessage = "The parking lot is full.";
     		return null;

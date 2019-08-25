@@ -26,6 +26,10 @@ public class ParkingLot {
 	}
 
 	public Car fetch(ParkingTicket parkingTicket) {
+		if (!cars.containsKey(parkingTicket)) {
+			return null;
+		}
+		
 		Car car = new Car();
 		car = cars.get(parkingTicket);
 		cars.remove(parkingTicket, car);

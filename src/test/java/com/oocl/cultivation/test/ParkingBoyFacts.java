@@ -2,6 +2,7 @@ package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.Car;
 import com.oocl.cultivation.ParkingBoy;
+import com.oocl.cultivation.ParkingBoyStory3;
 import com.oocl.cultivation.ParkingLot;
 import com.oocl.cultivation.ParkingTicket;
 import org.junit.jupiter.api.Test;
@@ -150,5 +151,23 @@ class ParkingBoyFacts {
         parkingBoy.park(new Car());
 
         assertEquals("The parking lot is full.", parkingBoy.getLastErrorMessage());
+    }
+    
+    // stroy3 ≤‚ ‘”√¿˝
+    @Test
+    void should_park_to_another_parking_lot_once_the_first_one_has_no_position_left() {
+    	final int capacityOne = 1;
+    	final int capacityTwo = 2;
+    	ParkingLot parkingLotOne = new ParkingLot(capacityOne);
+    	ParkingLot parkingLotTwo = new ParkingLot(capacityTwo);
+    	ParkingBoyStory3 parkingBoyStory3 = new ParkingBoyStory3(parkingLotOne, parkingLotTwo);
+    	
+    	parkingBoyStory3.park(new Car());
+//    	assertEquals("The parking lot one is full.", 
+//    			parkingBoyStory3.park(new Car()));
+//    	
+//    	parkingBoyStory3.park(new Car());
+//    	assertEquals("The parking lot one and two are both full.", 
+//    			parkingBoyStory3.park(new Car()));
     }
 }
